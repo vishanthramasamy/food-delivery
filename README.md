@@ -1,1 +1,1 @@
-food-delivery-nu-topaz.vercel.app
+https://food-delivery-nu-topaz.vercel.app/
