@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <title>Crave — Good food, right on time</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Crave home"><span class="brand-mark">c</span><span>crave<span class="brand-dot">.</span></span></a>
+      <div class="side-label">MENU</div>
+      <nav class="side-nav">
+        <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span>Discover</a>
+        <a class="nav-link" href="#menu"><span class="nav-icon">▦</span>Menu</a>
+        <a class="nav-link" href="#favorites"><span class="nav-icon">♡</span>Favorites</a>
+        <a class="nav-link" href="#orders"><span class="nav-icon">◷</span>Order history</a>
+      </nav>
+      <div class="side-label help-label">SUPPORT</div>
+      <nav class="side-nav">
+        <a class="nav-link" href="#help"><span class="nav-icon">?</span>Help center</a>
+        <a class="nav-link" href="#settings"><span class="nav-icon">⚙</span>Settings</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="offer-card"><span class="offer-spark">✦</span><strong>Hungry for a deal?</strong><p>Get 20% off your first order.</p><button id="offerBtn" class="offer-btn">Claim offer <span>→</span></button></div>
+        <div class="profile"><div class="avatar">JD</div><div class="profile-info"><strong>Jamie Davis</strong><span>Food explorer</span></div><button class="more-btn" aria-label="Profile options">···</button></div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark">c</span><span>crave<span class="brand-dot">.</span></span></div>
+        <div class="delivery-address"><span class="pin">⌖</span><div><span class="eyebrow">Delivering to</span><button class="address-button" id="addressBtn">Brooklyn, NY <span>⌄</span></button></div></div>
+        <div class="top-actions"><button class="icon-button notification" aria-label="Notifications">♧<i></i></button><button class="mobile-cart" id="mobileCartBtn">Cart <b id="mobileCount">0</b></button></div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy"><span class="hero-kicker"><span class="pulse"></span> GOOD FOOD, GOOD MOOD</span><h1>Your next<br>great meal is <em>here.</em></h1><p>Fresh flavors from the best local spots,<br>delivered right to your door.</p><a href="#restaurants" class="hero-cta">Explore restaurants <span>↗</span></a></div>
+        <div class="hero-image-wrap"><img class="hero-image" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85" alt="Colorful fresh grain bowl with vegetables"><div class="floating-rating"><span>★</span><div><strong>4.9 out of 5</strong><small>Loved by foodies</small></div></div><div class="hero-sticker">made with<br><b>love</b> <span>♥</span></div></div>
+        <div class="hero-deco deco-one"></div><div class="hero-deco deco-two"></div>
+      </section>
+
+      <section class="quick-info" aria-label="Delivery information"><div><span class="info-icon orange">◷</span><span><strong>Fast delivery</strong><small>Under 30 minutes</small></span></div><div><span class="info-icon green">✳</span><span><strong>Fresh ingredients</strong><small>Made daily, with care</small></span></div><div><span class="info-icon purple">♡</span><span><strong>Local favorites</strong><small>Handpicked for you</small></span></div></section>
+
+      <section class="section categories-section" id="menu"><div class="section-heading"><div><span class="section-kicker">WHAT ARE YOU CRAVING?</span><h2>Explore by category</h2></div><button class="text-button" id="allCategories">View all <span>→</span></button></div><div class="categories" id="categories"></div></section>
+
+      <section class="section restaurants-section" id="restaurants"><div class="section-heading restaurant-heading"><div><span class="section-kicker">CURATED FOR YOU</span><h2>Popular near you</h2></div><label class="search-box"><span>⌕</span><input type="search" id="searchInput" placeholder="Search restaurants or dishes" aria-label="Search restaurants or dishes"><kbd>⌘ K</kbd></label></div><div class="filter-row"><div class="filter-chips"><button class="filter-chip selected" data-filter="all">All restaurants</button><button class="filter-chip" data-filter="delivery">Fast delivery <span>↗</span></button><button class="filter-chip" data-filter="top">Top rated <span>★</span></button><button class="filter-chip" data-filter="deal">Offers <span>✦</span></button></div><button class="sort-button" id="sortBtn">⇅ <span>Sort by</span></button></div><div class="restaurant-grid" id="restaurantGrid"></div><div id="emptyState" class="empty-state" hidden><span>⌕</span><h3>No spots found</h3><p>Try another search or category.</p></div></section>
+      <footer>Made for good food days <span>♥</span><span class="footer-right">© 2024 Crave</span></footer>
+    </main>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Your order"><div class="cart-header"><div><span class="section-kicker">YOUR ORDER</span><h2>Your cart <span class="cart-count" id="cartCount">0</span></h2></div><button class="cart-more" aria-label="More cart options">···</button></div><div class="cart-location"><span>⌖</span><div><small>Delivering to</small><strong>Brooklyn, NY</strong></div><button id="changeAddress">Change</button></div><div class="cart-items" id="cartItems"><div class="cart-empty"><div class="empty-plate">♡</div><strong>Your cart is feeling lonely</strong><p>Add something delicious to get started.</p><a href="#restaurants">Browse restaurants <span>→</span></a></div></div><div class="cart-bottom" id="cartBottom" hidden><div class="promo-code"><span>✳</span><input id="promoInput" placeholder="Add a promo code"><button id="applyPromo">Apply</button></div><div class="bill-row"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div><div class="bill-row"><span>Delivery fee</span><strong id="deliveryFee">$2.99</strong></div><div class="bill-row"><span>Service fee</span><strong id="serviceFee">$0.00</strong></div><div class="bill-row discount-row" id="discountRow" hidden><span>Promo discount</span><strong id="discount">−$0.00</strong></div><div class="bill-row total-row"><span>Total</span><strong id="total">$0.00</strong></div><button class="checkout-btn" id="checkoutBtn">Go to checkout <span>→</span></button><div class="secure-note">♢ Secure checkout · Free cancellation</div></div><div class="cart-perks"><span>♧</span><div><strong>Need a little extra?</strong><p>Add drinks, sides, or dessert to your order.</p></div><a href="#restaurants">Browse</a></div></aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="modal-emoji" id="modalEmoji">🍽️</div><h2 id="modalTitle">All set!</h2><p id="modalText"></p><button class="checkout-btn" id="modalAction">Sounds good <span>→</span></button></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
